@@ -174,28 +174,6 @@ body {
     height: 100%;
     overflow: hidden;
 }
-
-.install-btn {
-  background: linear-gradient(135deg, #000000, #1a1a1a);
-  color: #ffffff;
-  border: 1px solid rgba(255,255,255,0.15);
-  padding: 12px 18px;
-  border-radius: 12px;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  transition: 0.25s ease;
-  box-shadow: 0 0 15px rgba(255,255,255,0.05);
-}
-
-.install-btn:hover {
-  transform: scale(1.05);
-  border-color: rgba(255,255,255,0.35);
-  box-shadow: 0 0 20px rgba(255,255,255,0.1);
-}
     
 </style>
 </head>
@@ -247,30 +225,6 @@ body {
 document.getElementById("keyBtn").addEventListener("click", () => {
     window.location.href = "https://davspace.mginex.site/";
 });
-
-    <script>
-let deferredPrompt;
-
-const installBtn = document.getElementById("installBtn");
-
-window.addEventListener("beforeinstallprompt", (e) => {
-  e.preventDefault();
-  deferredPrompt = e;
-
-  installBtn.style.display = "block";
-});
-
-installBtn.addEventListener("click", async () => {
-  if (!deferredPrompt) return;
-
-  deferredPrompt.prompt();
-
-  await deferredPrompt.userChoice;
-
-  deferredPrompt = null;
-  installBtn.style.display = "none";
-});
-</script>
 </script>
 
     <span id="error"></span>

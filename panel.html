@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- FONTE -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <title>DavPanel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  
+<div class="bg-grid"></div>
+
+<section class="hero">
+
+  <div class="logo">
+    <!-- COLOQUE SUA LOGO AQUI -->
+    <img src="logo.gif" alt="">
+  </div>
+
+  <span class="badge">● PAINEL EXCLUSIVO</span>
+
+  <h1>Bem-vindo ao<br>DavPanel</h1>
+
+  <p>Ferramentas exclusiva e sistema de injeção otimizado.</p>
+
+  <label class="upload">
+    Selecionar arquivo
+    <input type="file" id="fileInput">
+  </label>
+
+  <div class="status" id="status"></div>
+
+<div class="success hidden" id="successBox">
+  <div class="check">
+    <svg viewBox="0 0 24 24">
+      <path d="M20 6L9 17l-5-5"/>
+    </svg>
+  </div>
+  <span>Injeção concluída</span>
+</div>
+
+  <div class="progress">
+    <div class="bar" id="bar"></div>
+  </div>
+
+  <button id="openBtn" class="hidden">Abrir Free Fire</button>
+
+</section>
+
+  <div id="hourPopup" class="popup-overlay">
+  <div class="popup-box">
+    
+    <div class="popup-icon">
+      <!-- SVG refresh icon -->
+      <svg width="42" height="42" viewBox="0 0 24 24" fill="none">
+        <path d="M21 12a9 9 0 1 1-2.64-6.36" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        <path d="M21 3v6h-6" stroke="white" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+
+    <h2>Atualização recomendada</h2>
+    <p>O sistema sugere recarregar a página para manter tudo atualizado.</p>
+
+    <button onclick="window.location.href='index.html'" class="popup-btn">
+  Ir para página inicial
+</button>
+
+  </div>
+</div>
+  
+  <script>
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    document.getElementById("hourPopup").style.display = "flex";
+  }, 300000); // 5000ms = 5 segundos
+});
+</script>
+  
+<script src="script.js"></script>
+</body>
+</html>

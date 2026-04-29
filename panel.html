@@ -8,6 +8,33 @@
 
   <title>DavPanel</title>
   <link rel="stylesheet" href="style.css">
+
+  <script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAyTGNuOSjsmfm38z5Mur8vfiTmp8mZN8I",
+  authDomain: "davpanel.firebaseapp.com",
+  projectId: "davpanel",
+  storageBucket: "davpanel.firebasestorage.app",
+  messagingSenderId: "701622600060",
+  appId: "1:701622600060:web:4292a1a7b0bd89c17f24f9"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+document.body.style.display = "none";
+
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    document.body.style.display = "block";
+  } else {
+    window.location.replace("./index.html");
+  }
+});
+  </script>
   
 </head>
 
